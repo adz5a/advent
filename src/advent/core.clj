@@ -8,7 +8,7 @@
     (:in-garbage state) (case c
                           ">" (assoc state :in-garbage false)
                           "!" (assoc state :ignore-next true)
-                          state)
+                          (update state :count inc))
 
     :else (case c
             "<" (assoc state :in-garbage true)
